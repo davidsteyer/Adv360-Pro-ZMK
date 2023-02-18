@@ -1,3 +1,9 @@
+macro_sel_kpmg_pc: macro_sel_kpmg_pc{
+compatible = "zmk,behavior-macro";
+label = "macro_sel_kpmg_pc";
+#binding-cells = <0>;
+bindings = <&kp A>, <&kp B>, <&kp C>;
+};
 macro_quotes: macro_quotes{
 compatible = "zmk,behavior-macro";
 label = "macro_quotes";
