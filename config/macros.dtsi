@@ -4,13 +4,13 @@ label = "macro_sel_kpmg_pc";
 #binding-cells = <0>;
 bindings = <&bt BT_SEL 0>, <&to 0>;
 };
-macro_sel_kpmg_pc: macro_sel_my_mac{
+macro_sel_my_mac: macro_sel_my_mac{
 compatible = "zmk,behavior-macro";
 label = "macro_sel_my_mac";
 #binding-cells = <0>;
 bindings = <&bt BT_SEL 1>, <&to 4>;
 };
-macro_sel_kpmg_pc: macro_sel_my_pc{
+macro_sel_my_pc: macro_sel_my_pc{
 compatible = "zmk,behavior-macro";
 label = "macro_sel_my_pc";
 #binding-cells = <0>;
