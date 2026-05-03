@@ -222,3 +222,35 @@
     bindings = <&mkp MB1 &mkp MB1>;
     display-name = "Double Click";
   };
+
+  /* ---------------------------------------------------------------
+   * User-defined macros (carried over from V2.0 fork).
+   * Each switches the active Bluetooth profile and jumps to a layer.
+   *   - macro_sel_kpmg_pc  -> BT 0, layer 0 (Base)
+   *   - macro_sel_my_mac   -> BT 1, layer 4 (MAC layer)
+   *   - macro_sel_my_pc    -> BT 2, layer 0 (Base)
+   * --------------------------------------------------------------- */
+
+  macro_sel_kpmg_pc: macro_sel_kpmg_pc {
+    compatible = "zmk,behavior-macro";
+    label = "macro_sel_kpmg_pc";
+    #binding-cells = <0>;
+    bindings = <&bt BT_SEL 0>, <&to 0>;
+    display-name = "Profile: KPMG PC";
+  };
+
+  macro_sel_my_mac: macro_sel_my_mac {
+    compatible = "zmk,behavior-macro";
+    label = "macro_sel_my_mac";
+    #binding-cells = <0>;
+    bindings = <&bt BT_SEL 1>, <&to 4>;
+    display-name = "Profile: My Mac";
+  };
+
+  macro_sel_my_pc: macro_sel_my_pc {
+    compatible = "zmk,behavior-macro";
+    label = "macro_sel_my_pc";
+    #binding-cells = <0>;
+    bindings = <&bt BT_SEL 2>, <&to 0>;
+    display-name = "Profile: My PC";
+  };
