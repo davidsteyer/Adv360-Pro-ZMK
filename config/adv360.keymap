@@ -21,20 +21,36 @@
           bindings = <&kp>, <&kp>;
       };
 
+      mac_word_left_inner: mac_word_left_inner {
+          compatible = "zmk,behavior-mod-morph";
+          label = "MAC_WORD_LEFT_INNER";
+          #binding-cells = <0>;
+          bindings = <&kp LA(LEFT)>, <&kp LA(LS(LEFT))>;
+          mods = <(MOD_LSFT)>;
+      };
+
       mac_word_left: mac_word_left {
           compatible = "zmk,behavior-mod-morph";
           label = "MAC_WORD_LEFT";
           #binding-cells = <0>;
-          bindings = <&kp LEFT>, <&kp LC(LA(LEFT))>;
-          mods = <(MOD_LGUI|MOD_LSFT)>;
+          bindings = <&kp LEFT>, <&mac_word_left_inner>;
+          mods = <(MOD_LGUI)>;
+      };
+
+      mac_word_right_inner: mac_word_right_inner {
+          compatible = "zmk,behavior-mod-morph";
+          label = "MAC_WORD_RIGHT_INNER";
+          #binding-cells = <0>;
+          bindings = <&kp LA(RIGHT)>, <&kp LA(LS(RIGHT))>;
+          mods = <(MOD_LSFT)>;
       };
 
       mac_word_right: mac_word_right {
           compatible = "zmk,behavior-mod-morph";
           label = "MAC_WORD_RIGHT";
           #binding-cells = <0>;
-          bindings = <&kp RIGHT>, <&kp LC(LA(RIGHT))>;
-          mods = <(MOD_LGUI|MOD_LSFT)>;
+          bindings = <&kp RIGHT>, <&mac_word_right_inner>;
+          mods = <(MOD_LGUI)>;
       };
     };
 
