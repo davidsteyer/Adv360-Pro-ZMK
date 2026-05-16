@@ -20,6 +20,22 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+      mac_word_left: mac_word_left {
+          compatible = "zmk,behavior-mod-morph";
+          label = "MAC_WORD_LEFT";
+          #binding-cells = <0>;
+          bindings = <&kp LEFT>, <&kp LC(LA(LEFT))>;
+          mods = <(MOD_LGUI|MOD_LSFT)>;
+      };
+
+      mac_word_right: mac_word_right {
+          compatible = "zmk,behavior-mod-morph";
+          label = "MAC_WORD_RIGHT";
+          #binding-cells = <0>;
+          bindings = <&kp RIGHT>, <&kp LC(LA(RIGHT))>;
+          mods = <(MOD_LGUI|MOD_LSFT)>;
+      };
     };
 
   keymap {
@@ -86,7 +102,7 @@
         &trans &trans &trans &trans &trans &trans &trans                                                         &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans   &kp LGUI &trans   &kp RCTRL &kp RGUI                  &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans                   &trans &trans                                       &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans                 &trans   &trans &trans &trans   &trans   &trans              &trans &trans &trans &trans &trans
+        &trans &trans &trans &mac_word_left &mac_word_right                 &trans   &trans &trans &trans   &trans   &trans              &trans &trans &trans &trans &trans
       >;
     };
 
